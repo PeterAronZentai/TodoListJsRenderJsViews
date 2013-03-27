@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="jquery.js"></script>
+    <script src="jsrender.js"></script>
+    <script src="jquery.observable.js"></script>
+    <script src="jquery.views.js"></script>
+    <script src="jaydata.js"></script>
+    <script src="sql.js"></script>
+    <title></title>
+    <script>
+        var Task = $data.define("Task", {
+            Todo: String,
+            Completed: Boolean
+        });
+
+        //Task.save({ Todo: 'ABC' });
+        //Task.save({ Todo: 'ABC' });
+    </script>
+</head>
+<body>
+
+
+    <script id="TaskItem" type="text/x-jsrender">
+        <li>{{:#index}}: {{>Todo}}
+            {{include tmpl=#xxx}}
+                <b>{{>Todo}}</b>
+            {{/include}}
+<br />!
+        {{include tmpl=#yyy/}}
+       </li>
+    </script>
+    <script id="xxx" type="text/x-jsrender">
+        <i>{{include tmpl=#content/}}</i>
+    </script>
+
+    <script id="yyy" type="text/x-jsrender">
+        <i>{{>Todo}}</i>
+    </script>
+
+    <ul id="x">
+
+    </ul>
+    <script>
+        var a;
+        $.templates({
+            taskItem: "#TaskItem",
+            textOnlyTemplate: "#textOnlyTemplate"
+        });
+
+
+        $.link.taskItem('#x', a);
+
+        Task.readAll().then(function (items) {
+            a = items;
+            items.forEach(function (item, index) {
+                $.observable(a).insert(index+1, item);
+            });
+            
+            //$('#x').html( $.render.taskItem(items));
+        })
+    </script>
+</body>
+</html>

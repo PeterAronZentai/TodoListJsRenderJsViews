@@ -1,0 +1,5 @@
+c:\git\TodoJsRenderJsViews\TodoJsRenderJsViews\bin\TodoJsRenderJsViews.dll
+c:\git\TodoJsRenderJsViews\TodoJsRenderJsViews\bin\TodoJsRenderJsViews.pdb
+c:\git\TodoJsRenderJsViews\TodoJsRenderJsViews\obj\Debug\TodoJsRenderJsViews.csprojResolveAssemblyReference.cache
+c:\git\TodoJsRenderJsViews\TodoJsRenderJsViews\obj\Debug\TodoJsRenderJsViews.dll
+c:\git\TodoJsRenderJsViews\TodoJsRenderJsViews\obj\Debug\TodoJsRenderJsViews.pdb
